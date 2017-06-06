@@ -1,4 +1,4 @@
-from tkinter import *
+from Tkinter import *
 import math
 
 def clic(numer):
@@ -17,6 +17,12 @@ def sen():
     oper = int(eval(operador))
     num.set(math.sin(oper))
     operador = ""
+
+def cos():
+    global operador
+    oper = int(eval(operador))
+    num.set(math.cos(oper))
+    operador = " "
     
 ventana = Tk()
 frame = Frame(ventana)
@@ -44,7 +50,7 @@ btn9 = Button(ventana, padx = 15, bd = 5, text = "9", fg = "black", command = la
 btn0 = Button(ventana, padx = 15, bd = 5, text = "0", fg = "black", command = lambda: clic(0)).grid(row = 3, column = 2)
 ##funciones trigonometricas-------------------------------------------------------------------
 btnsen = Button(ventana, padx = 10, bd = 5, text = "sen", fg = "black", command = sen).grid(row = 4, column = 0)
-btncos = Button(ventana, padx = 10, bd = 5, text = "cos", fg = "black", command = lambda: clic("cos(")).grid(row = 4, column = 1)
+btncos = Button(ventana, padx = 10, bd = 5, text = "cos", fg = "black", command = cos).grid(row = 4, column = 1)
 btntag = Button(ventana, padx = 10, bd = 5, text = "tan", fg = "black", command = lambda: clic("tg(")).grid(row = 4, column = 2)
 btneq = Button(ventana, padx = 10, bd = 5, text = " = ", fg = "black", command = igual).grid(row = 4, column = 3)
 
