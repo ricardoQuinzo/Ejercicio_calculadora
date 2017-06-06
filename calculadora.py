@@ -5,6 +5,12 @@ def clic(numer):
     operador = operador + str(numer)
     num.set(operador)
 
+def igual():
+    global operador
+    oper = str(eval(operador))
+    num.set(oper)
+    operador = ""
+
 ventana = Tk()
 frame = Frame(ventana)
 ventana.title("CALCULADORA")
@@ -30,9 +36,10 @@ btn8 = Button(ventana, padx = 15, bd = 5, text = "8", fg = "black", command = la
 btn9 = Button(ventana, padx = 15, bd = 5, text = "9", fg = "black", command = lambda: clic(9)).grid(row = 3, column = 1)
 btn0 = Button(ventana, padx = 15, bd = 5, text = "0", fg = "black", command = lambda: clic(0)).grid(row = 3, column = 2)
 ##funciones trigonometricas-------------------------------------------------------------------
-btnsen = Button(ventana, padx = 10, bd = 5, text = "sen", fg = "black", command = lambda: clic("sen")).grid(row = 4, column = 0)
-btncos = Button(ventana, padx = 10, bd = 5, text = "cos", fg = "black", command = lambda: clic("cos")).grid(row = 4, column = 1)
-btntag = Button(ventana, padx = 10, bd = 5, text = "tan", fg = "black", command = lambda: clic("tg")).grid(row = 4, column = 2)
+btnsen = Button(ventana, padx = 10, bd = 5, text = "sen", fg = "black", command = lambda: clic("sen(")).grid(row = 4, column = 0)
+btncos = Button(ventana, padx = 10, bd = 5, text = "cos", fg = "black", command = lambda: clic("cos(")).grid(row = 4, column = 1)
+btntag = Button(ventana, padx = 10, bd = 5, text = "tan", fg = "black", command = lambda: clic("tg(")).grid(row = 4, column = 2)
+btneq = Button(ventana, padx = 10, bd = 5, text = " = ", fg = "black", command = igual).grid(row = 4, column = 3)
 
 btnadd = Button(ventana, padx = 15, bd = 5, text = "+", fg = "black", command = lambda: clic("+")).grid(row = 5, column = 0)
 btnsubs = Button(ventana, padx = 15, bd = 5, text = "-", fg = "black", command = lambda: clic("-")).grid(row = 5, column = 1)
